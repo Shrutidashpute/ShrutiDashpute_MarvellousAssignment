@@ -1,0 +1,18 @@
+# Program for Addition, Subtraction, Multiplication and Division
+
+print("Enter the first number: ")
+x = int(input())
+print("Enter the second number: ")
+y = int(input())
+
+Ans = x + y
+print("Addition : ", Ans)
+
+Ans = x - y
+print("Subtraction : ", Ans)
+
+Ans = x * y
+print("Multiplication : ", Ans)
+
+Ans = x / y
+print("Division : ", Ans)

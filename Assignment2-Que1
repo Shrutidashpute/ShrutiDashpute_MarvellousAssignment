@@ -1,0 +1,6 @@
+# Program to display Value, Type and Memeory address
+
+a = 10
+print("Value of a:", a)
+print("Type of a:", type(a))
+print("Memory address of a:", id(a))
