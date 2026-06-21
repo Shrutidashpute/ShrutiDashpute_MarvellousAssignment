@@ -1,0 +1,6 @@
+import sys
+Value1 = int(input("Enter an number: "))
+
+print("Data type:", type(Value1))
+print("Memory address:", id(Value1))
+print("Size in bytes:", sys.getsizeof(Value1))
