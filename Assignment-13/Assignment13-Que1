@@ -1,0 +1,13 @@
+def AreaRectangle(length, breadth):
+    Ans = length*breadth
+    return Ans
+
+def main():
+    No1 = int(input("Enter length of rectangle : "))
+    No2 = int(input("Enter breadth of rectangle : "))
+    Ret = AreaRectangle(No1, No2)
+    print("Area of rectangle is : ",Ret)
+  
+if __name__ == "__main__":
+    main()   
+

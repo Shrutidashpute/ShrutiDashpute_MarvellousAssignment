@@ -1,0 +1,16 @@
+def CheckGrade(No):
+    if No >= 75:
+        print("Distinction")
+    elif No >= 60:
+        print("First Class")
+    elif No >= 50:
+        print("Second Class")    
+    else:
+        print("Fail")
+
+def main():
+    No = int(input("Enter a Percentage: "))
+    CheckGrade(No)
+
+if __name__ == "__main__":
+    main()
