@@ -1,0 +1,13 @@
+def NumberFactorial(No1):
+    Factorial = 1
+    for i in range(1, No1 + 1):
+        Factorial = Factorial * i
+
+    print("Factorial of number is:", Factorial)
+
+def main():
+    No1 = int(input("Enter a number: "))
+    NumberFactorial(No1)
+
+if __name__ == "__main__":
+    main()

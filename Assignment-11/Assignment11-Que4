@@ -1,0 +1,19 @@
+def NumberReverse(No1):
+    Reverse = 0
+
+    while No1 != 0:
+        Digit = No1 % 10
+        Reverse = Reverse * 10 + Digit
+        No1 = No1 // 10
+
+    return Reverse
+
+def main():
+    No = int(input("Enter a number: "))
+    Reverse = NumberReverse(No)
+
+    print("Reversed number:", Reverse)
+
+
+if __name__ == "__main__":
+    main()

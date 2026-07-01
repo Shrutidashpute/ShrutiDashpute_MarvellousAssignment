@@ -1,0 +1,18 @@
+def DigitSum(No1):
+    Sum = 0
+
+    while No1 != 0:
+        Digit = No1 % 10
+        Sum = Sum + Digit
+        No1 = No1 // 10
+ 
+    return Sum
+
+def main():
+    No1 = int(input("Enter a number: "))
+    Sum = DigitSum(No1)
+
+    print("Sum of digits:", Sum)
+
+if __name__ == "__main__":
+    main()

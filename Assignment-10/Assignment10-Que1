@@ -1,0 +1,11 @@
+def PrintTable(No1):
+    for i in range(1, 11):
+        result = No1 * i
+        print(result)
+
+def main():
+    No1 = int(input("Enter a number: "))
+    PrintTable(No1)
+
+if __name__ == "__main__":
+    main()

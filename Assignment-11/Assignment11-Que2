@@ -1,0 +1,15 @@
+def DigitCount(No1):
+    Count = 0
+
+    while No1 != 0:
+        Count = Count + 1
+        No1 = No1 // 10
+
+    print("Number of digits:", Count)
+
+def main():
+    No1 = int(input("Enter a number: "))
+    DigitCount(No1)
+
+if __name__ == "__main__":
+    main()

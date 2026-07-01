@@ -1,0 +1,12 @@
+def CharacterCheck(ch):
+    if ch in ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'):
+        print("Vowel")
+    else:
+        print("Consonant")
+
+def main():
+    ch = input("Enter a character: ")
+    CharacterCheck(ch)
+
+if __name__ == "__main__":
+    main()

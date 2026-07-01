@@ -1,0 +1,13 @@
+def SumNaturalNumber(No1):
+    Sum = 0
+    for i in range(1, No1 + 1):
+        Sum = Sum + i
+
+    print("Sum of first natural numbers is:", Sum)
+
+def main():
+    No1 = int(input("Enter a number: "))
+    SumNaturalNumber(No1)
+
+if __name__ == "__main__":
+    main()

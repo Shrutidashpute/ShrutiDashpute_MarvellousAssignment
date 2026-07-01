@@ -1,0 +1,19 @@
+def DisplayPrimeNumbers(No1):
+    if No1 <= 1:
+        return False
+
+    for i in range(2, No1):
+        if No1 % i == 0:
+            return False
+
+    return True
+
+def main():
+    No1 = int(input("Enter a number: "))
+    if DisplayPrimeNumbers(No1):
+        print("Prime number")
+    else:
+        print("Not a prime number")
+
+if __name__ == "__main__":
+    main()
