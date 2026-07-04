@@ -1,0 +1,19 @@
+CheckEven = lambda No1 : (No1 % 2 == 0)
+
+def main():
+
+    Size = int(input("Enter number of elements: "))
+
+    Data = []
+
+    for i in range(Size):
+        No1 = int(input("Enter a number: "))
+        Data.append(No1)
+
+    EvenList = list(filter(CheckEven, Data))
+
+    print("Input Data List :", Data)
+    print("Data After Filter :", EvenList)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,19 @@
+DivisibleByFiveThree = lambda x: x % 3 == 0 and x % 5 == 0
+
+def main():
+
+    Size = int(input("Enter number of elements: "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter a number: "))
+        Data.append(No)
+
+    Result = list(filter(DivisibleByFiveThree, Data))
+
+    print("Original List :", Data)
+    print("Filtered List :", Result)
+
+if __name__ == "__main__":
+    main()

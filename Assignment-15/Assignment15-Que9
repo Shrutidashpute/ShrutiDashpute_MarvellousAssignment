@@ -1,0 +1,20 @@
+from functools import reduce
+
+Product = lambda x, y: x * y
+
+def main():
+
+    Size = int(input("Enter number of elements: "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter a number: "))
+        Data.append(No)
+
+    Result = reduce(Product, Data)
+
+    print("Product of all elements:", Result)
+
+if __name__ == "__main__":
+    main()

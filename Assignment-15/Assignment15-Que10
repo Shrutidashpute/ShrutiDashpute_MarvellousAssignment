@@ -1,0 +1,18 @@
+EvenCount = lambda x: x % 2 == 0
+
+def main():
+
+    Size = int(input("Enter number of elements: "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter a number: "))
+        Data.append(No)
+
+    Result = list(filter(EvenCount, Data))
+
+    print("Count of even numbers:", len(Result))
+
+if __name__ == "__main__":
+    main()
