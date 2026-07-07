@@ -1,0 +1,55 @@
+import threading
+
+def EvenList(Data):
+
+    Sum = 0
+
+    print("Even Elements are :")
+
+    for Value in Data:
+        if Value % 2 == 0:
+            print(Value, end=" ")
+            Sum = Sum + Value
+
+    print("\nSum of Even Elements :", Sum)
+
+
+def OddList(Data):
+
+    Sum = 0
+
+    print("Odd Elements are :")
+
+    for Value in Data:
+        if Value % 2 != 0:
+            print(Value, end=" ")
+            Sum = Sum + Value
+
+    print("\nSum of Odd Elements :", Sum)
+
+
+def main():
+
+    Size = int(input("Enter number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter number : "))
+        Data.append(No)
+
+    print("Input List :", Data)
+
+    T1 = threading.Thread(target=EvenList, args=(Data,))
+    T2 = threading.Thread(target=OddList, args=(Data,))
+
+    T1.start()
+    T2.start()
+
+    T1.join()
+    T2.join()
+
+    print("Exit from main")
+
+if __name__ == "__main__":
+    main()
