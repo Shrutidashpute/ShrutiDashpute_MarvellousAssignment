@@ -1,0 +1,34 @@
+from functools import reduce
+
+def FilterX(No):
+    return No >= 70 and No <= 90
+
+def MapX(No):
+    return No + 10
+
+def ReduceX(A, B):
+    return A * B
+
+def main():
+
+    Size = int(input("Enter number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter number : "))
+        Data.append(No)
+
+    print("Input List =", Data)
+
+    FData = list(filter(FilterX, Data))
+    print("List after filter =", FData)
+
+    MData = list(map(MapX, FData))
+    print("List after map =", MData)
+
+    RData = reduce(ReduceX, MData)
+    print("Output of reduce =", RData)
+
+if __name__ == "__main__":
+    main()

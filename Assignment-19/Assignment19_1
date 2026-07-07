@@ -1,0 +1,11 @@
+Power = lambda No: No ** 2
+
+def main():
+    No = int(input("Enter a number : "))
+
+    Result = Power(No)
+
+    print("Output :", Result)
+
+if __name__ == "__main__":
+    main()

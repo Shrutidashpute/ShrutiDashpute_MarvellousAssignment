@@ -1,0 +1,37 @@
+from functools import reduce
+
+def ChkOdd(No):
+    return No % 2 != 0
+
+def MultiplyBy2(No):
+    return No * 2
+
+def Maximum(A, B):
+    if A > B:
+        return A
+    else:
+        return B
+
+def main():
+
+    Size = int(input("Enter number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter number : "))
+        Data.append(No)
+
+    print("Input List =", Data)
+
+    FData = list(filter(ChkOdd, Data))
+    print("List after filter =", FData)
+
+    MData = list(map(MultiplyBy2, FData))
+    print("List after map =", MData)
+
+    RData = reduce(Maximum, MData)
+    print("Output of reduce =", RData)
+
+if __name__ == "__main__":
+    main()
