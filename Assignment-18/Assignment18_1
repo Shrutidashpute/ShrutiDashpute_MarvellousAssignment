@@ -1,0 +1,26 @@
+def Addition(Data):
+    Sum = 0
+
+    for Value in Data:
+        Sum = Sum + Value
+
+    return Sum
+
+def main():
+
+    Size = int(input("Number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Input Elements : "))
+        Data.append(No)
+
+    print("Input List :", Data)
+
+    Result = Addition(Data)
+
+    print("Addition is :", Result)
+
+if __name__ == "__main__":
+    main()

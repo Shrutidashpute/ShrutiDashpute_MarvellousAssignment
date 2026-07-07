@@ -1,0 +1,28 @@
+def Frequency(Data, Search):
+    Count = 0
+
+    for Value in Data:
+        if Value == Search:
+            Count = Count + 1
+
+    return Count
+
+def main():
+
+    Size = int(input("Number of elements : "))
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Input Elements : "))
+        Data.append(No)
+
+    print("Input Elements :", Data)
+
+    Search = int(input("Element to search : "))
+
+    Result = Frequency(Data, Search)
+
+    print("Frequency is :", Result)
+
+if __name__ == "__main__":
+    main()
