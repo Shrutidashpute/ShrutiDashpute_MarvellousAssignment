@@ -1,0 +1,9 @@
+def DisplayLength(Name):
+    print("Length of name is:", len(Name))
+
+def main():
+    Name = input("Enter your name: ")
+    DisplayLength(Name)
+
+if __name__ == "__main__":
+    main()

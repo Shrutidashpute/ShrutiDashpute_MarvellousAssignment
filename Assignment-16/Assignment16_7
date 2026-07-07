@@ -1,0 +1,12 @@
+DivisibleByFive = lambda No: True if No % 5 == 0 else False
+
+def main():
+    No = int(input("Enter a number: "))
+
+    if DivisibleByFive(No):
+        print("True")
+    else:
+        print("False")
+
+if __name__ == "__main__":
+    main()
