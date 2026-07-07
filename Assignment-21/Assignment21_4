@@ -1,0 +1,45 @@
+import threading
+
+def SumList(Data):
+
+    Sum = 0
+
+    for Value in Data:
+        Sum = Sum + Value
+
+    print("Sum of elements :", Sum)
+
+
+def ProductList(Data):
+
+    Product = 1
+
+    for Value in Data:
+        Product = Product * Value
+
+    print("Product of elements :", Product)
+
+
+def main():
+
+    Size = int(input("Enter number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter number : "))
+        Data.append(No)
+
+    print("Input List :", Data)
+
+    T1 = threading.Thread(target=SumList, args=(Data,))
+    T2 = threading.Thread(target=ProductList, args=(Data,))
+
+    T1.start()
+    T2.start()
+
+    T1.join()
+    T2.join()
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,59 @@
+import threading
+
+def ChkPrime(No):
+
+    if No <= 1:
+        return False
+
+    for i in range(2, No):
+        if No % i == 0:
+            return False
+
+    return True
+
+
+def Prime(Data):
+
+    print("Prime Numbers are :")
+
+    for Value in Data:
+        if ChkPrime(Value):
+            print(Value, end=" ")
+
+    print()
+
+
+def NonPrime(Data):
+
+    print("Non-Prime Numbers are :")
+
+    for Value in Data:
+        if not ChkPrime(Value):
+            print(Value, end=" ")
+
+    print()
+
+
+def main():
+
+    Size = int(input("Enter number of elements : "))
+
+    Data = []
+
+    for i in range(Size):
+        No = int(input("Enter number : "))
+        Data.append(No)
+
+    print("Input List :", Data)
+
+    T1 = threading.Thread(target=Prime, args=(Data,))
+    T2 = threading.Thread(target=NonPrime, args=(Data,))
+
+    T1.start()
+    T2.start()
+
+    T1.join()
+    T2.join()
+
+if __name__ == "__main__":
+    main()
