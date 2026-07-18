@@ -1,0 +1,48 @@
+class BankAccount:
+    # Class variable
+    ROI = 10.5
+
+    # Constructor
+    def __init__(self, Name, Amount):
+        self.Name = Name
+        self.Amount = Amount
+
+    # Display account details
+    def Display(self):
+        print("Account Holder :", self.Name)
+        print("Balance :", self.Amount)
+
+    # Deposit amount
+    def Deposit(self):
+        amt = float(input("Enter amount to deposit : "))
+        self.Amount += amt
+        print("Amount deposited successfully.")
+
+    # Withdraw amount
+    def Withdraw(self):
+        amt = float(input("Enter amount to withdraw : "))
+
+        if amt <= self.Amount:
+            self.Amount -= amt
+            print("Withdrawal successful.")
+        else:
+            print("Insufficient balance!")
+
+    # Calculate Interest
+    def CalculateInterest(self):
+        Interest = (self.Amount * BankAccount.ROI) / 100
+        return Interest
+
+
+# Object Creation
+obj1 = BankAccount("Riya", 100000)
+
+obj1.Display()
+
+obj1.Deposit()
+obj1.Display()
+
+obj1.Withdraw()
+obj1.Display()
+
+print("Interest =", obj1.CalculateInterest())
