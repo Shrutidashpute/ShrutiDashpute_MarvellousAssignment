@@ -1,0 +1,21 @@
+def CountWords(FileName):
+     FileObj = open(FileName, "r")
+
+     Count = 0
+
+     for Line in FileObj:
+        Words = Line.split()
+        Count += len(Words)
+
+     FileObj.close()
+
+     print("Total number of words in", FileName, ":", Count)
+
+def main():
+    FileName = input("Enter file name : ")
+ 
+    CountWords(FileName)
+  
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,39 @@
+import schedule
+import os
+import time
+
+def DeleteEmptyFiles(Path):
+
+    LogFile = open("DeleteLog.txt", "a")
+
+    for FolderName, SubFolders, FileNames in os.walk(Path):
+
+        for File in FileNames:
+
+            FilePath = os.path.join(FolderName, File)
+
+            try:
+                if os.path.getsize(FilePath) == 0:
+
+                    os.remove(FilePath)
+
+                    LogFile.write(FilePath +
+                                  " deleted successfully\n")
+
+            except PermissionError:
+                LogFile.write(FilePath +
+                              " permission denied\n")
+
+    LogFile.close()
+
+def main():
+    Path = input("Enter directory path : ")
+
+    schedule.every(1).hours.do(DeleteEmptyFiles, Path)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()

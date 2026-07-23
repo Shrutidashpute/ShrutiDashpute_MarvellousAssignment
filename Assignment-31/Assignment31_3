@@ -1,0 +1,29 @@
+import schedule
+import os
+import datetime
+import time
+
+def ScanDirectory(Path):
+    Files = 0
+    Directories = 0
+
+    for FolderName, SubFolders, FileNames in os.walk(Path):
+        Files += len(FileNames)
+        Directories += len(SubFolders)
+
+    print("Directory Scanned :", Path)
+    print("Total Files :", Files)
+    print("Total Subdirectories :", Directories)
+    print("Scan Time :",datetime.datetime.now().strftime("%d-%m-%Y %I:%M:%S %p"))
+
+def main():
+    Path = input("Enter directory path : ")
+
+    schedule.every(1).minutes.do(ScanDirectory, Path)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()

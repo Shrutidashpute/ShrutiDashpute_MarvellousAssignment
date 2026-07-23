@@ -1,0 +1,48 @@
+import schedule
+import shutil
+import os
+import time
+
+def CopyFiles(SourceDir, DestinationDir):
+
+    if not os.path.isdir(SourceDir):
+        print("Invalid Source Directory")
+        return
+
+    if not os.path.isdir(DestinationDir):
+        print("Invalid Destination Directory")
+        return
+
+    LogFile = open("CopyLog.txt", "a")
+
+    for File in os.listdir(SourceDir):
+
+        if File.endswith(".txt"):
+
+            SourcePath = os.path.join(SourceDir, File)
+            DestinationPath = os.path.join(DestinationDir, File)
+
+            try:
+                shutil.copy(SourcePath, DestinationPath)
+
+                LogFile.write(File + " copied successfully\n")
+
+            except Exception:
+                LogFile.write(File + " could not be copied\n")
+
+    LogFile.close()
+
+def main():
+    SourceDir = input("Enter Source Directory : ")
+    DestinationDir = input("Enter Destination Directory : ")
+
+    schedule.every(10).minutes.do(CopyFiles,
+                                  SourceDir,
+                                  DestinationDir)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()

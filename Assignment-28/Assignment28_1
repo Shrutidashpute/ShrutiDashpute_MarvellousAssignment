@@ -1,0 +1,17 @@
+def main():
+    FileName = input("Enter file name : ")
+
+    FileObj = open(FileName, "r")
+
+    Count = 0
+
+    for Line in FileObj:
+        Count += 1
+
+    FileObj.close()
+
+    print("Total number of lines in", FileName, ":", Count)
+
+   
+if __name__ == "__main__":
+    main()

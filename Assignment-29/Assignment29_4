@@ -1,0 +1,25 @@
+import sys
+
+def CompareFile(SourceFile, DestinationFile):
+    FileObj1 = open(SourceFile, "r")
+    Data1 = FileObj1.read()
+
+    FileObj2 = open(DestinationFile, "r")
+    Data2 = FileObj2.read()
+
+    if Data1 == Data2:
+        print("Success")
+    else:
+        print("Failure")
+
+    FileObj1.close()
+    FileObj2.close()
+
+def main():
+    File1 = sys.argv[1]
+    File2 = sys.argv[2]
+    
+    CompareFile(File1, File2)
+
+if __name__ == "__main__":
+    main()

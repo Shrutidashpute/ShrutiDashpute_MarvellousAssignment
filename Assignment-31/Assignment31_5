@@ -1,0 +1,34 @@
+import schedule
+import os
+import datetime
+import time
+
+def CountFiles(Path):
+    Count = 0
+
+    for FolderName, SubFolders, FileNames in os.walk(Path):
+        Count += len(FileNames)
+
+    FileObj = open("DirectoryCountLog.txt", "a")
+
+    FileObj.write("\nDirectory Path : " + Path)
+    FileObj.write("\nNumber of Files : " + str(Count))
+    FileObj.write("\nDate and Time : " +
+                  datetime.datetime.now().strftime("%d-%m-%Y %I:%M:%S %p"))
+    FileObj.write("\n")
+
+    FileObj.close()
+
+    print("Information stored successfully")
+
+def main():
+    Path = input("Enter directory path : ")
+
+    schedule.every(5).minutes.do(CountFiles, Path)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()

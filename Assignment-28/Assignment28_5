@@ -1,0 +1,23 @@
+def FindWord(FileName):
+    FileObj = open(FileName, "r")
+
+    Word = input("Enter word : ")
+
+    Data = FileObj.read()
+
+    if Word in Data:
+        print(Word, "is found in", FileName)
+    else:
+        print(Word, "is not found in", FileName)
+
+
+    FileObj.close()
+
+def main():
+    FileName = input("Enter file name : ")
+ 
+    FindWord(FileName)
+  
+
+if __name__ == "__main__":
+    main()

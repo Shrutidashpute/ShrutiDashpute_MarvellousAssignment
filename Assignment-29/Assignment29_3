@@ -1,0 +1,18 @@
+import sys
+
+def CopyFile(SourceFile):
+    FileObj1 = open(SourceFile, "r")
+    Data = FileObj1.read()
+    FileObj1.close()
+
+    FileObj2 = open("ABC.txt", "w")
+    FileObj2.write(Data)
+    FileObj2.close()
+
+    print("Contents copied successfully")
+
+def main():
+    CopyFile(sys.argv[1])
+
+if __name__ == "__main__":
+    main()

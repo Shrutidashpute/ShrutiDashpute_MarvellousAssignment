@@ -1,0 +1,33 @@
+import schedule
+import os
+import datetime
+import time
+
+def MonitorFile(FileName):
+    FileObj = open("FileSizeLog.txt", "a")
+
+    if os.path.exists(FileName):
+
+        Size = os.path.getsize(FileName)
+
+        FileObj.write("\nFile Path : " + FileName)
+        FileObj.write("\nFile Size : " + str(Size) + " Bytes")
+        FileObj.write("\nDate and Time : " +
+                      datetime.datetime.now().strftime("%d-%m-%Y %I:%M:%S %p"))
+        FileObj.write("\n")
+    else:
+        FileObj.write("\n" + FileName + " does not exist\n")
+
+    FileObj.close()
+
+def main():
+    FileName = input("Enter file name : ")
+
+    schedule.every(30).seconds.do(MonitorFile, FileName)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()

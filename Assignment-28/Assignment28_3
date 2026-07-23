@@ -1,0 +1,18 @@
+def PrintLine(FileName):
+    FileObj = open(FileName, "r")
+
+    Count = 0
+
+    for Line in FileObj:
+        print(Line,end="")
+        Count += 1
+        
+    FileObj.close()
+
+def main():
+    FileName = input("Enter file name : ")
+
+    PrintLine(FileName)
+       
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,16 @@
+def DisplayFile(FileName):
+    FileObj = open(FileName, "r")
+
+    Data = FileObj.read()
+
+    print(Data)
+
+    FileObj.close()
+
+def main():
+    FileName = input("Enter file name : ")
+
+    DisplayFile(FileName)
+
+if __name__ == "__main__":
+    main()

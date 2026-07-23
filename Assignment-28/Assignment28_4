@@ -1,0 +1,20 @@
+def CopyFile(SourceFile, DestinationFile):
+    SrcObj = open(SourceFile, "r")
+    Data = SrcObj.read()
+    SrcObj.close()
+
+    DestObj = open(DestinationFile, "w")
+    DestObj.write(Data)
+    DestObj.close()
+
+    print("Contents of : ", SourceFile, "copied into : ", DestinationFile)
+
+
+def main():
+    File1 = input("Enter existing file name : ")
+    File2 = input("Enter new file name : ")
+
+    CopyFile(File1, File2)
+
+if __name__ == "__main__":
+    main()

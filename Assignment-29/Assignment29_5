@@ -1,0 +1,19 @@
+def FrequencyWord(FileName, Word):
+    FileObj = open(FileName, "r")
+
+    Data = FileObj.read()
+
+    Count = Data.count(Word)
+
+    print("Frequency of", Word, "is", Count)
+
+    FileObj.close()
+
+def main():
+    FileName = input("Enter file name : ")
+    Word = input("Enter word : ")
+
+    FrequencyWord(FileName, Word)
+
+if __name__ == "__main__":
+    main()

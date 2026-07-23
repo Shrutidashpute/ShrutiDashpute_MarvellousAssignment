@@ -1,0 +1,15 @@
+import os
+
+def CheckFile(FileName):
+    if os.path.exists(FileName):
+        print(FileName, "exists")
+    else:
+        print(FileName, "does not exist")
+
+def main():
+    FileName = input("Enter file name : ")
+
+    CheckFile(FileName)
+
+if __name__ == "__main__":
+    main()

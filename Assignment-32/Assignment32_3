@@ -1,0 +1,38 @@
+import schedule
+import os
+import time
+
+def DisplayFile(FileName):
+    try:
+        if not os.path.exists(FileName):
+            print("File does not exist")
+            return
+
+        FileObj = open(FileName, "r")
+
+        Data = FileObj.read()
+
+        if len(Data) == 0:
+            print("File is empty")
+        else:
+            print(Data)
+
+        FileObj.close()
+
+    except PermissionError:
+        print("Permission denied")
+
+    except Exception:
+        print("File cannot be opened")
+
+def main():
+    FileName = input("Enter file name : ")
+
+    schedule.every(1).minutes.do(DisplayFile, FileName)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()
